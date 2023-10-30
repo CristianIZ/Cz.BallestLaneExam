@@ -1,0 +1,7 @@
+Description
+
+You want to create a social network capable of creating text and image publications
+
+To do this, you must know which user is the author of said publication and save it in a database.
+
+The application must have different layers (business, data, unit tests)

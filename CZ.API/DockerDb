@@ -1,0 +1,7 @@
+docker pull mcr.microsoft.com/mssql/server
+
+docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=123456' -p 1433:1433 --name DB.Cz.BallestLane -d mcr.microsoft.com/mssql/server
+
+docker cp script.sql DB.Cz.BallestLane:/dbCreationScript.sql
+
+docker exec -it DB.Cz.BallestLane /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P 123456 -d DB.Cz.BallestLane -i /dbCreationScript.sql
